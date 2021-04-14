@@ -14,10 +14,7 @@
 
 import os
 import redis
-from lib.common import cache
 
-
-@cache
 def get_client():
   redis_host = os.environ.get('REDISHOST', 'localhost')
   redis_port = int(os.environ.get('REDISPORT', 6379))

@@ -14,7 +14,7 @@
 
 import lib.redis
 import lib.pubsub
-from lib.constants import Sinks
+from lib.constants import Sinks, Views
 from lib.record import serialize_record
 from lib.schemas import get_product_schema
 
@@ -24,7 +24,7 @@ def write_product(product) -> None:
   #print("Product: {}".format(product))
   sku = product['sku']
   record = serialize_record(product, get_product_schema())
-  result = redis_client.hset(Sinks.PRODUCT, sku, record)
+  result = redis_client.hset(Views.PRODUCT, sku, record)
   #print(f"write_product: hset result {result}")
 
 

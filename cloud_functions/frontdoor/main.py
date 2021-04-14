@@ -25,7 +25,7 @@ database = spanner.get_database()
 columns = ("id", "event_info_json_string", "created_at", "commit_timestamp")
 
 
-def add_to_cart(request) -> Union[int, Tuple[str, int]]:
+def frontdoor(request) -> Union[int, Tuple[str, int]]:
   required_fields = ["event_info_json_string"]
   fields, error = http.parse_request_json(request, required_fields)
   if error is not None:

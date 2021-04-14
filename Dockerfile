@@ -6,8 +6,6 @@ WORKDIR /src
 
 ADD . /src
 
-RUN ./bin/install-bert.sh
-
 RUN pipenv install --dev
 
 ENV GOOGLE_APPLICATION_CREDENTIALS=/var/secret/credentials.json

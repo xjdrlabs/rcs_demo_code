@@ -15,3 +15,5 @@
 class Sinks:
   PRODUCT = 'Product'
 
+class Views:
+  PRODUCT = 'Product'
