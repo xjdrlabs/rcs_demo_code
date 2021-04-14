@@ -22,8 +22,6 @@ from typing import Tuple, Union
 
 table = os.environ.get("TABLE", "frontdoor")
 database = spanner.get_database()
-
-#TODO(xjdr): need to add customer_id so that we can track things by customer
 columns = ("id", "event_info_json_string", "created_at", "commit_timestamp")
 
 
